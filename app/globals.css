@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "Playfair Display", "Times New Roman", serif;
+  background: #050407;
+  color: #f9f2d7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(241, 200, 120, 0.15), transparent 60%),
+    radial-gradient(circle at bottom, rgba(132, 70, 24, 0.25), transparent 65%),
+    #050407;
+}
+
+main {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.golden-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 200, 120, 0.05), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255, 220, 160, 0.08), transparent 55%);
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@keyframes slow-pan {
+  0% {
+    transform: scale(1.08) translate3d(-3%, -2%, 0);
+  }
+  50% {
+    transform: scale(1.12) translate3d(3%, 2%, 0);
+  }
+  100% {
+    transform: scale(1.08) translate3d(-3%, -2%, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.4;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(100%);
+  }
+}
+
+.light-beam {
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(115deg, rgba(255, 230, 180, 0.06) 0%, transparent 45%);
+  animation: shimmer 18s linear infinite;
+  pointer-events: none;
+}
